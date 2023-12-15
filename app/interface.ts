@@ -6,3 +6,13 @@ export interface shortProduct {
     slug: string
     categoryName: string
 }
+
+export interface fullProduct {
+    _id: string
+    images: any
+    price: number
+    name: string
+    description: string
+    slug: string
+    categoryName: string
+}
