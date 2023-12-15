@@ -15,7 +15,7 @@ const ImageComp = ({images}:Props) => {
         setMainImg(image)
     }
   return (
-    <div className='grid gap-4 lg:grid-cols-5'>
+    <div className='grid gap-4  content-center lg:grid-cols-5'>
         <div className='order-last flex gap-4 lg:order-none lg:flex-col'>
         {images.map((image:any, index:any) => (
             <div className='overflow-hidden rounded-lg bg-gray-100' key={index}>
