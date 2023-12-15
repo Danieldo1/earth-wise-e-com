@@ -31,11 +31,11 @@ const links =[
 const Nav = () => {
     const pathname = usePathname()
   return (
-    <header className='mb-8 border-b'>
+    <header className='mb-8 shadow-lg'>
       <div className='flex items-center justify-between mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl'>
         <Link href='/'>
-          <h1 className='text-3xl font-bold'>Earth 
-          <span className='text-3xl font-bold text-primary'>Wise</span>
+          <h1 className='text-5xl font-bold text1'>Earth 
+          <span className='text-5xl font-bold text-primary text1'>Wise</span>
           </h1>
         </Link>
 
@@ -54,10 +54,10 @@ const Nav = () => {
                 </div>
             ))}
         </nav>
-        <div className='flex divide-x border-r sm:border-l'>
-         <Button variant='outline' className='flex flex-col gap-y-1.5 h-12 w-12 sm:h-20 sm:w-20 md:h-24 md:w-24 rounded-none'>
-            <ShoppingBag className=''/>
-            <span className='text-sm hidden font-semibold sm:block text-gray-500'>Cart</span>
+        <div className='flex divide-x group'>
+         <Button variant='ghost' className='flex flex-col gap-y-1.5 h-12 w-12 sm:h-20 sm:w-20 md:h-24 md:w-24 rounded-none'>
+            <ShoppingBag className='group-hover:text-primary transition delay-100'/>
+            <span className='text-sm hidden font-semibold sm:block text-gray-500 group-hover:text-primary transition delay-150'>Cart</span>
          </Button>
         </div>
       </div>
