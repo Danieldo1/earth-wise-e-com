@@ -23,9 +23,9 @@ const NewProd = async () => {
     const data: shortProduct[] = await getData()
   return (
     <div className='bg-white'>
-        <div className='mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8'>
-            <div className='flex justify-between items-center '>
-                <h2 className='text-2xl font-bold tracking-tight text-gray-900'>New Products</h2>
+        <div className='mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8 '>
+            <div className='flex justify-between items-center mb-5 '>
+                <h2 className='text-5xl md:text-7xl font-bold tracking-tight text-gray-900 text1'>New Products</h2>
                     <Link href='/all'>
                         <span className='text-primary flex items-center gap-x-1'>View All &rarr;</span>
                     </Link>
@@ -34,26 +34,26 @@ const NewProd = async () => {
             <div className='mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8'>
                 {data.map((product) => (
                     <div key={product._id} className='group relative'>
-                        <div className='min-h-80 aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75 lg:aspect-none lg:h-80'>
+                        <div className='min-h-80 aspect-square w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75 lg:aspect-none lg:h-80'>
                             <Image
                                 src={product.imageUrl}
                                 alt={product.name}
                                 className='h-full w-full object-cover object-center lg:h-full lg:w-full'
-                                width={300}
-                                height={300}
+                                width={200}
+                                height={200}
                             />
                         </div>
                         <div className='mt-4 flex justify-between'>
-                            <div>
-                                <h3 className='text-sm font-semibold text-gray-900'>
+                            <div >
+                                <h3 className='text-lg md:text-sm font-semibold text-gray-900'>
                                     <Link href={`/product/${product.slug}`}>
                                         <span aria-hidden='true' className='absolute inset-0' />
                                         {product.name}
                                     </Link>
                                 </h3>
-                                <p className='mt-1 text-sm text-gray-500'>{product.categoryName}</p>
+                                <p className='mt-1 text-md md:text-sm text-gray-500'>{product.categoryName}</p>
                             </div>
-                            <p className='text-sm font-medium text-gray-900'>${product.price}</p>
+                            <p className='text-md md:text-sm font-medium text-gray-900'>${product.price}</p>
                         </div>
                     </div>
                 ))}
