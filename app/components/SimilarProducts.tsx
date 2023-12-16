@@ -7,8 +7,8 @@ import CategoryPage from '../[category]/page'
 
 
 const SimilarProducts = async ({params}:{params:{category:string}}) => {
-    const getCategory = async (category:any,) =>{
-        const query = `*[_type == "product" && category->name == "${category}"][0...4]{
+    const getCategory = async (category:any) =>{
+        const query = `*[_type == "product" && category->name == "${category}" ][1...4]{
             _id,
             "imageUrl": images[0].asset->url,
             price,
@@ -16,7 +16,7 @@ const SimilarProducts = async ({params}:{params:{category:string}}) => {
             "slug": slug.current,
             "categoryName": category->name
           }`
-    
+     
             const data = await client.fetch(query)
     
             return data
