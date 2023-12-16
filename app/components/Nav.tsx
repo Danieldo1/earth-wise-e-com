@@ -4,10 +4,11 @@ import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import React from 'react'
-import {ShoppingBag} from 'lucide-react'
+import {MenuIcon, ShoppingBag} from 'lucide-react'
 import { useShoppingCart } from 'use-shopping-cart'
 import { useRouter } from 'next/navigation'
 import { cn } from '@/lib/utils'
+import MobNav from './MobNav'
 
 const links =[
     {
@@ -45,6 +46,7 @@ const Nav = () => {
           <span className='text-5xl font-bold text-primary text1'>Wise</span>
           </h1>
         </Link>
+         
 
         <nav className='hidden gap-12 lg:flex 2xl:ml-16'>
             {links.map((link, index) => (
@@ -61,8 +63,12 @@ const Nav = () => {
                 </div>
             ))}
         </nav>
-        <div className='flex divide-x group'>
-         <Button variant='ghost' className={cn('flex flex-col gap-y-1.5 h-12 w-12 sm:h-20 sm:w-20 md:h-24 md:w-24 rounded-none', {
+        
+        <div className='flex justify-center  items-center '>
+      
+
+            <MobNav />
+         <Button variant='ghost' className={cn('flex mx-5 group flex-col gap-y-1.5 h-12 w-12 sm:h-20 sm:w-20 md:h-24 md:w-24 rounded-none', {
           'hidden': shouldHideButton
         })}
          onClick={() => handleCartClick()}
