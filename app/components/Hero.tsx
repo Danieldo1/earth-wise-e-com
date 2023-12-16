@@ -22,7 +22,7 @@ const Hero = async () => {
             </div>
 
             <div className='mb-12 flex w-full md:mb-16 lg:w-2/3'>
-                <div className='relative  z-10 md:-ml-12 overflow-hidden rounded-lg bg-gray-100 shadow-lg md:left-16 md:top-16 lg:ml-0'>
+                <div className='relative justify-center items-center z-10 md:-ml-12 overflow-hidden rounded-lg bg-gray-100 shadow-lg md:left-16 md:top-16 lg:ml-0'>
                 <Image
               src={urlFor(data.image1).url()}
               alt="Great Photo"
@@ -33,7 +33,7 @@ const Hero = async () => {
             />                
             </div>
 
-            <div className=' hidden md:block overflow-hidden rounded-lg bg-gray-100 shadow-lg'>
+            <div className=' hidden lg:block overflow-hidden rounded-lg bg-gray-100 shadow-lg'>
                 <Image
               src={urlFor(data.image2).url()}
               alt="Great Photo"

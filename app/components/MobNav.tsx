@@ -38,8 +38,8 @@ const MobNav = () => {
     <div className='cursor-pointer items-center lg:hidden'>
         <DropdownMenu >
   <DropdownMenuTrigger>
-    <Button variant={'ghost'} className='flex flex-col hover:text-primary transition delay-100 gap-y-1.5 h-12 w-12 sm:h-20 sm:w-20 md:h-24 md:w-24  rounded-none'>
-    <StoreIcon className='w-6 h-6 ' />
+    <Button variant={'ghost'} className='flex  flex-col group group-hover:text-primary transition delay-100 gap-y-1.5 h-12 w-12 sm:h-20 sm:w-20 md:h-24 md:w-24  rounded-none'>
+    <StoreIcon className='w-6 h-6 group group-hover:text-primary transition delay-100' />
     <span className='text-sm hidden font-semibold sm:block text-gray-500 group-hover:text-primary transition delay-150'>Shop</span>
     </Button>
     

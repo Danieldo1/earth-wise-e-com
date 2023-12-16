@@ -24,6 +24,10 @@ const links =[
     }
 ]
 const Footer = () => {
+    function getCurrentYear() {
+        return new Date().getFullYear();
+      }
+      const year = getCurrentYear();
   return (
     <div className='mt-8 pb-8 bg-primary w-full'>
         <div className="container p-8 flex flex-col justify-center items-center">
@@ -39,7 +43,7 @@ const Footer = () => {
             ))}
             
         </div>
-            <p className='text-white text-center font-medium text-lg'>© 2022 Earth Wise. All rights reserved.</p>
+            <p className='text-white text-center font-medium text-lg'>© {year} Earth Wise. All rights reserved.</p>
 
 
     </div>

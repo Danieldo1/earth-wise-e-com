@@ -7,8 +7,8 @@ const Blog = () => {
     <div className='justify-center items-center'>
         <h1 className='text-5xl font-bold text1'>Read Our blog</h1>
     </div>
-    <div className='flex flex-col md:grid md:grid-cols-2 md:gap-8 items-center justify-center p-8 md:items-start'>
-        <div className='flex flex-col justify-center items-center p-8'>
+    <div className='flex  flex-col md:grid md:grid-cols-2 md:gap-8 items-center justify-center p-8 md:items-start'>
+        <div className='flex hover:cursor-pointer group group-hover:opacity-75 flex-col justify-center items-center p-8'>
             <div className='min-h-80 aspect-square w-full overflow-hidden rounded-lg bg-gray-200 group-hover:opacity-75 lg:aspect-none lg:h-80'>
             <Image src={'/candle.webp'} alt='candle' width={500} height={500} className='h-full w-full object-cover object-center lg:h-full lg:w-full'/>
             </div>
@@ -19,7 +19,7 @@ const Blog = () => {
             </div>
         </div>
   
-        <div className='flex flex-col justify-center items-center p-8'>
+        <div className='flex flex-col hover:cursor-pointer group group-hover:opacity-75  justify-center items-center p-8'>
             <div className='min-h-80 aspect-square w-full overflow-hidden rounded-lg bg-gray-200 group-hover:opacity-75 lg:aspect-none lg:h-80'>
             <Image src={'/presents.webp'} alt='candle' width={500} height={500} className='h-full w-full object-cover object-center lg:h-full lg:w-full'/>
             </div>
