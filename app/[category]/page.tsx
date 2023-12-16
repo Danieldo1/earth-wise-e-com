@@ -19,6 +19,8 @@ const getCategory = async (category:string) =>{
         return data
 }
 
+export const dynamic = 'force-dynamic'
+
 const CategoryPage = async ({params}:{params:{category:string}}) => {
     const data:shortProduct[] = await getCategory(params.category)
     // console.log(data,'DATA')

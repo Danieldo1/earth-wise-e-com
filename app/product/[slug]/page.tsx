@@ -1,4 +1,5 @@
 import AddToCart from '@/app/components/AddToCart'
+import BuyNow from '@/app/components/BuyNow'
 import ImageComp from '@/app/components/ImageComp'
 import Reviews from '@/app/components/Reviews'
 import SimilarProducts from '@/app/components/SimilarProducts'
@@ -9,6 +10,8 @@ import { Separator } from '@/components/ui/separator'
 import { Star, Truck } from 'lucide-react'
 import Link from 'next/link'
 import React from 'react'
+
+
 
 const getProduct = async (slug:string) =>{
     const query = `*[_type == "product" && slug.current== "${slug}"][0]{
@@ -26,6 +29,9 @@ const getProduct = async (slug:string) =>{
 
       return data
 }
+
+export const dynamic = 'force-dynamic'
+
 
 const ProductPage = async ({params}:{params:{slug:string}}) => {
     const data: fullProduct = await getProduct(params.slug)
@@ -100,7 +106,7 @@ const ProductPage = async ({params}:{params:{slug:string}}) => {
                     <p className='my-6 text-base text-gray-800 md:text-lg tracking-wide'>{data.description}</p>
 
                     <div className='flex gap-2.5 mb-12 '>
-                        <Button className='w-full md:w-1/2 rounded-lg h-12 '>Buy now</Button>
+                        <BuyNow currency='USD' name={data.name} description={data.description} price={data.price} image={data.images[0]} price_id={data.price_id} />
                         <AddToCart currency='USD' name={data.name} description={data.description} price={data.price} image={data.images[0]} price_id={data.price_id} key={data._id} />
                     </div>   
                 </div>

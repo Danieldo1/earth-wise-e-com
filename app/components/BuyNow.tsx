@@ -24,7 +24,7 @@ const BuyNow = ({currency,name,description,price,image,price_id}:CartProps) => {
     }
   return (
     <Button
-    variant={'secondary'} className='w-full md:w-1/2 rounded-lg h-12'
+    className='w-full md:w-1/2 rounded-lg h-12 '
     onClick={() => {
         handleBuyNow(product.price_id)
     }}

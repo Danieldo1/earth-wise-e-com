@@ -19,7 +19,7 @@ const Points = () => {
         <div className='bg-primary rounded-lg col-span-4 md:col-span-2 p-8 flex flex-col justify-center items-center'>
             <Waypoints className='hidden md:block justify-center mb-4 items-center w-16 h-16 text-white' />
             <h1 className='text-4xl font-bold text1 text-white md:text-5xl'>Best-In-Class Brands</h1>
-            <p className='text-gray-200 text-center' >We've built a community of truly earth-conscious brands, dedicated to offering sustainable, quality products without compromises to our planet.</p>
+            <p className='text-gray-200 text-center' >We&apos;ve built a community of truly earth-conscious brands, dedicated to offering sustainable, quality products without compromises to our planet.</p>
         </div>
         <div className='bg-primary rounded-lg col-span-4 md:col-span-2 p-8 flex flex-col justify-center items-center'>
             <LeafyGreen className='hidden md:block justify-center mb-4 items-center w-16 h-16 text-white' />
