@@ -12,7 +12,6 @@ import {
 import { useShoppingCart } from "use-shopping-cart"
 import Image from "next/image"
 import { Trash2 } from "lucide-react"
-import { Separator } from "@radix-ui/react-separator"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 
@@ -25,18 +24,22 @@ const Cart = () => {
         removeItem,
         totalPrice,
         redirectToCheckout,
+        clearCart
       } = useShoppingCart();
 
       const handleCheckout = async (e:any) => {
           e.preventDefault()
           try {
               const result = await redirectToCheckout()
+              clearCart()
               if (result?.error) {
                   console.log("Error:", result.error.message)
               }
-          } catch (error) {
-              console.log("Error:", error)
-          }
+            } catch (error) {
+                console.log("Error:", error)
+            }
+            
+
       }
   return (
     <Sheet open={shouldDisplayCart} onOpenChange={() => handleCartClick()}> 
@@ -49,7 +52,11 @@ const Cart = () => {
         <div className="mt-8 flex-1 overflow-y-auto">
             <ul className="-my-6 divide-y divide-gray-100">
                 {cartCount === 0 ? (
+                    <div>
                 <h1 className="text-center py-6 text-4xl">Your cart is empty</h1>
+                <Image src={'/emptycart.jpg'} alt='emptycart' width={500} height={500} />
+                <p className="text-center text-2xl">Start adding some items to your cart</p>
+                    </div>
                 ):(
                 <>
                 {Object.values(cartDetails ?? {}).map((item) => (

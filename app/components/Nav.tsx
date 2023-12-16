@@ -6,6 +6,8 @@ import { usePathname } from 'next/navigation'
 import React from 'react'
 import {ShoppingBag} from 'lucide-react'
 import { useShoppingCart } from 'use-shopping-cart'
+import { useRouter } from 'next/navigation'
+import { cn } from '@/lib/utils'
 
 const links =[
     {
@@ -32,6 +34,9 @@ const links =[
 const Nav = () => {
     const pathname = usePathname()
     const {handleCartClick} =useShoppingCart()
+   console.log(pathname)
+   const shouldHideButton = pathname === `/stripe/success`;
+
   return (
     <header className='mb-8 shadow-lg py-3 md:py-0'>
       <div className='flex items-center justify-between mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl'>
@@ -57,7 +62,9 @@ const Nav = () => {
             ))}
         </nav>
         <div className='flex divide-x group'>
-         <Button variant='ghost' className='flex flex-col gap-y-1.5 h-12 w-12 sm:h-20 sm:w-20 md:h-24 md:w-24 rounded-none'
+         <Button variant='ghost' className={cn('flex flex-col gap-y-1.5 h-12 w-12 sm:h-20 sm:w-20 md:h-24 md:w-24 rounded-none', {
+          'hidden': shouldHideButton
+        })}
          onClick={() => handleCartClick()}
          >
             <ShoppingBag className='group-hover:text-primary transition delay-100'/>

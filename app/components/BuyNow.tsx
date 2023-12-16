@@ -29,7 +29,7 @@ const BuyNow = ({currency,name,description,price,image,price_id}:CartProps) => {
         handleBuyNow(product.price_id)
     }}
     >
-    Add to cart
+    Buy Now
     </Button>
   )
 }

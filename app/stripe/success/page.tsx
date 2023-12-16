@@ -1,12 +1,21 @@
+'use client'
 import { CheckCircle } from 'lucide-react'
 import Image from 'next/image'
-import React from 'react'
+import { useEffect } from 'react';
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
-
+import { useShoppingCart } from "use-shopping-cart"
 
 const PaymentSuccess = () => {
+
+    const {clearCart} = useShoppingCart()
+
+    useEffect(() => {
+        clearCart();
+      }, []);
   return (
+    <>
+
     <div className='container p-8 flex flex-col justify-center items-center'>
             <CheckCircle className=' justify-center mb-4 items-center w-16 h-16 text-primary' />
         <div className=' md:max-w-[50vw] mx-auto justify-center items-center'>
@@ -20,6 +29,7 @@ const PaymentSuccess = () => {
             </Button>
         </Link>
     </div>
+    </>
   )
 }
 
