@@ -15,4 +15,5 @@ export interface fullProduct {
     description: string
     slug: string
     categoryName: string
+    price_id: string
 }

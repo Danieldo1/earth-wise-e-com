@@ -1,3 +1,4 @@
+import AddToCart from '@/app/components/AddToCart'
 import ImageComp from '@/app/components/ImageComp'
 import Reviews from '@/app/components/Reviews'
 import SimilarProducts from '@/app/components/SimilarProducts'
@@ -18,6 +19,7 @@ const getProduct = async (slug:string) =>{
           description,
           "slug": slug.current,
           "categoryName": category->name,
+          price_id
       }`
 
       const data = await client.fetch(query)
@@ -99,7 +101,7 @@ const ProductPage = async ({params}:{params:{slug:string}}) => {
 
                     <div className='flex gap-2.5 mb-12 '>
                         <Button className='w-full md:w-1/2 rounded-lg h-12 '>Buy now</Button>
-                        <Button variant={'secondary'} className='w-full md:w-1/2 rounded-lg h-12'>Add to cart</Button>
+                        <AddToCart currency='USD' name={data.name} description={data.description} price={data.price} image={data.images[0]} price_id={data.price_id} key={data._id} />
                     </div>   
                 </div>
             </div>
