@@ -5,7 +5,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 const getData = async () => {
-    const query = `*[_type == "product"] {
+    const query = `*[_type == "product"][0...26] | order(_createdAt desc) {
         _id,
           price,
           name,
