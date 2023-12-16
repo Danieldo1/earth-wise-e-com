@@ -4,6 +4,7 @@ import NewProd from './components/NewProd'
 import Points from './components/Points'
 import Impact from './components/Impact'
 import Blog from './components/Blog'
+import Newsletter from './components/Newsletter'
 
 export const dynamic = 'force-dynamic'
 
@@ -15,6 +16,7 @@ export default function Home() {
     <Impact />
     <Points />
     <Blog />
+    <Newsletter />
     </main>
   )
 }

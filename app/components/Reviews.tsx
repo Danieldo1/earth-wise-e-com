@@ -1,3 +1,4 @@
+import { StarIcon } from 'lucide-react';
 import React from 'react'
 
 const Reviews = ({product}:{product:string}) => {
@@ -66,9 +67,9 @@ const Reviews = ({product}:{product:string}) => {
         <div key={index} className='py-8 px-8 md:px-24 md:mx-24 bg-slate-100 m-12 rounded-lg'>
             <div className='flex items-center justify-between '>
           <h3 className='text-lg font-semibold py-2'>{review.title}</h3>
-          <p className='font-bold'>
+          <p className='font-bold flex'>
             <span className='font-bold'>Rating: </span>
-            {review.rating}⭐️
+            {review.rating}<StarIcon className='w-5 h-5 text-yellow-500 ' fill='orange' />
         </p>
           </div>
           <p>{review.review}</p>
